@@ -1,0 +1,93 @@
+<link
+  rel="stylesheet"
+  href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+/>
+<% if (user) { %>
+<h3>You are signed in: <%= user.username %></h3>
+<a href="/logout">Logout</a>
+<% } %> <% if (!user) { %>
+<a href="/login">Login</a>
+<a href="/register">Register</a>
+<% } %>
+
+<div class="jumbotron">
+  <h1 class="display-4">Welcome to Vidzy</h1>
+  <p class="lead">Here is a list of popular movies</p>
+  <hr class="my-4" />
+  <p class="lead"></p>
+  <!-- Search form -->
+  <form action="/" method="GET">
+    <div class="md-form mt-0">
+      Search for videos
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Search"
+        aria-label="Search"
+      />
+      <!-- Default unchecked -->
+      <br />
+    </div>
+    Filter By Genres:
+    <!-- Default unchecked disabled -->
+    <div class="custom-control custom-checkbox">
+      <input
+        type="checkbox"
+        class="custom-control-input"
+        id="fantasy"
+        name="genre"
+        value="fantasy"
+      />
+      <label class="custom-control-label" for="fantasy">Fantasy</label>
+    </div>
+    <div class="custom-control custom-checkbox">
+      <input
+        type="checkbox"
+        class="custom-control-input"
+        id="scifi"
+        name="genre"
+        value="scifi"
+      />
+      <label class="custom-control-label" for="scifi">SciFi</label>
+    </div>
+    <div class="custom-control custom-checkbox">
+      <input
+        type="checkbox"
+        class="custom-control-input"
+        id="drama"
+        name="genre"
+        value="drama"
+      />
+      <label class="custom-control-label" for="drama">Drama</label>
+    </div>
+    <div class="custom-control custom-checkbox">
+      <input
+        type="checkbox"
+        class="custom-control-input"
+        id="action"
+        name="genre"
+        value="action"
+      />
+      <label class="custom-control-label" for="action">Action</label>
+    </div>
+    <div>
+      <button class="btn btn-primary btn-lg" type="Submit">Search</button>
+    </div>
+  </form>
+</div>
+
+<div class="container">
+  <div class="row text-center">
+    <% videos.forEach(function(video){ %>
+    <div class="col-md-4">
+      <div>
+        <img
+          src="images/<%= video.image %>"
+          style="width:200px; height:200px;"
+        />
+        <a class="caption" href="/videos/<%= video._id%>"><%= video.title %></a>
+      </div>
+    </div>
+    <% }); %>
+  </div>
+</div>

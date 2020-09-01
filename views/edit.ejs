@@ -1,0 +1,45 @@
+<link
+  rel="stylesheet"
+  href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+/>
+<div class="container">
+  <h1>Edit an existing movie</h1>
+  <a href="/"> Back to List</a>
+  <form action="/videos/<%= video._id%>?_method=PUT" method="POST">
+    <div class="form-group">
+      <input
+        type="text"
+        name="title"
+        placeholder="title"
+        class="form-control"
+        value="<%= video.title%>"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="text"
+        name="genre"
+        placeholder="genre"
+        class="form-control"
+        value="<%= video.genre%>"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="text"
+        name="image"
+        placeholder="image"
+        class="form-control"
+        value="<%= video.image%>"
+      />
+    </div>
+    <div class="form-group">
+      <textarea name="description" class="form-control">
+<%= video.description%></textarea
+      >
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-info">Submit</button>
+    </div>
+  </form>
+</div>

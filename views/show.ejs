@@ -1,0 +1,19 @@
+<link
+  rel="stylesheet"
+  href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+/>
+<div class="container">
+  <p><img src="/images/<%= video.image %>" /></p>
+  <p>Title: <%= video.title %></p>
+  <p>Genre: <%= video.genre %></p>
+  <p>Description: <%= video.description %></p>
+  <a href="/"> Back to List</a>
+  <a class="btn btn-warning" href="/videos/<%= video._id %>/edit"
+    >Edit the movie</a
+  >
+  <form action="/videos/<%= video._id %>?_method=DELETE" method="POST">
+    <button type="submit" class="btn btn-danger" 
+      >Delete the movie</a
+    >
+  </form>
+</div>

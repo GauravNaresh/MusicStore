@@ -1,0 +1,40 @@
+<link
+  rel="stylesheet"
+  href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+/>
+<div class="container">
+  <h1>Create a new movie</h1>
+  <a href="/"> Back to List</a>
+  <form action="/videos" method="POST">
+    <div class="form-group">
+      <input
+        type="text"
+        name="title"
+        placeholder="title"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="text"
+        name="genre"
+        placeholder="genre"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="text"
+        name="image"
+        placeholder="image"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <textarea name="description" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-info">Submit</button>
+    </div>
+  </form>
+</div>
